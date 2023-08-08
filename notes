@@ -1,0 +1,47 @@
+   // Lecture  5,6
+// If we are importing something from one file to other then default wala kisi v anme se export ho jayega but if we want to import some thing ohter than default then we have do as follows:--
+
+// In module1.js we have:--
+
+// import ui from './module2.js'
+// // Here ui can have any names  ....
+// console.log(ui);  // o/p is sk bcz it is default exported by othrt file.
+
+// if we want to import b and c then :--
+// // Here name must be same in both files  ....
+// import {b,c} from './module2.js'
+// console.log(b);
+// console.log(c);
+
+// In module2.js we have:--
+
+// const a="Sahil";
+// const b="Sk";
+// const c="Pk";
+// const d="Sahil Kumar";
+
+// export default b;
+// In case we import this file then by default b will be accessible but if we want to import c and d also then we have to write in this file:--
+
+// export {c};
+// export {d};
+
+
+
+
+
+//************************************* Lecture ---->>7 ********************************************/
+
+// 1. State=condition of any component for eg. textarea component might be empty sometime , sometimes it has letters .
+// 2. Hooks= A method which helps us to use features of classes in function based component this is because developer like us prefer to use function over classes.
+// 3. Hooks has this part ---->   const [count,setCount)=useState("Hello Universe"); 
+//      Here in above hook the value of count is Hello Universe . count is array variable so that we just can't update or change its value like normal variable. 
+// But we can update or change its value using setCount() method. i.e. setCount("Hey You"); this implies the value of count is updated to Hey You.
+
+// What is inside this mini project and what i do?
+// ---> Project provides mini textarea and 2/3 buttons like UpperCase, LowerCase, No. of letters. we change the text value according to the buttons instruction using state and event. 
+// Its more simple as we use onClick={ClickFunction) and we define its functionality as well.
+
+// Note : Advantages of hooks and this stuff ,  whenever you click Uppercase button page does not reload. Which enhances its capability. IMP*
+
+//************************************* Lecture ---->>8 ********************************************/
