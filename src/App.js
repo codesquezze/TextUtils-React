@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import './App.css';
 import Navbar from './components/Navbar';
 import Textform from './components/Textform';
-// import About from './components/About';
+import About from './components/About';
 import Alert from './components/Alert';
 // import Contact from './components/Contact';
-// import { Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 
 function App() {
   const [mode, setMode] = useState('light');
@@ -21,7 +21,6 @@ function App() {
       showAlert("Light mode has been enabled", "success");
     }
   }
-
   const [alert, setAlert] = useState(null);
   const showAlert = (message, type) => {
     setAlert({
@@ -30,32 +29,29 @@ function App() {
     })
     setTimeout(() => {
       setAlert(null);
-    }, 1000)
+    }, 1500)
+  }
+  let style={
+    color:'red',
   }
   return (
     <>
-      <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode} navitem1="Home" />
-      <Alert alert={alert} />
-      {/* <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode} navitem1="About" navitem2="Contact Us" />
-        <Alert alert={alert} /> */}
-      {/* <Navbar/>     used when default props is used */}
+      <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode} navitem1="Home" navitem2="About" />
+        <Alert alert={alert}/>
+
       <div className="container">
-        {/* <Routes>
-            <Route exact path="/" element={<Textform showAlert={showAlert} heading="Text Analyser" mode={mode} toggleMode={toggleMode} />} />
-            
-            <Route exact path="/About" element={<About  mode={mode} toggleMode={toggleMode}/>} />
-            <Route exact path="/Contact Us" element={<Contact/>} />
+
+        <Routes>
+          <Route path="/" element={<Textform showAlert={showAlert} heading="Text Analyser" mode={mode} toggleMode={toggleMode} />} />
+          <Route path="/Home" element={<Textform showAlert={showAlert} heading="Text Analyser" mode={mode} toggleMode={toggleMode} />} />
+
+          <Route path="/About" element={<About showAlert={showAlert} heading="About Text Analyser" mode={mode} toggleMode={toggleMode} />} />
+
+          {/* <Route  path="./Contact" element={<Contact />} /> */}
 
 
-          </Routes> */
-
-          <Textform showAlert={showAlert} heading="Text Analyser" mode={mode} toggleMode={toggleMode} />
-        }
-
-
-
+        </Routes>
       </div>
-
     </>
   );
 }
